@@ -1,107 +1,44 @@
 <?php
 
-    print_r("1.1 Funciones de salida en PHP");
+    print_r("1.2 Variables y constantes");
 
-    /*En la programación, las funciones de salida se utilizan 
-    para mostrar información al usuario al finalizar la ejecución 
-    de un proceso específico o al concluir una solicitud realizada 
-    por el usuario final.*/
+    /*En PHP, las variables y las constantes se utilizan para almacenar y 
+    manipular datos durante la ejecución de un programa.*/
 
-    print_r("echo");
+    print_r("Variables");
 
-    /*La función echo se utiliza para imprimir uno o más valores en la salida. 
-    Puede imprimir cadenas de texto, variables y combinaciones de estos. */
-
-    /*ejemplo*/
-
-    $username = "Fred";
-    echo "Hola, " . $username;  // Imprime: Hola, Fred
-
-    print_r("print");
-
-    /* La función print es similar a echo y se utiliza para imprimir un solo 
-    valor en la salida. A diferencia de echo, print devuelve siempre el valor 1, 
-    por lo que se puede utilizar en expresiones. */
+    /*Una variable es un contenedor que almacena un valor que puede cambiar 
+    durante la ejecución del programa.
+    Se declaran utilizando el símbolo $ seguido de un nombre válido de variable
+    y se les asigna un valor con el operador de asignación =.
+    No necesitan un tipo de dato específico y pueden almacenar diferentes tipos 
+    de datos, como cadenas de texto, números, arreglos, objetos, etc.
+    El valor de una variable puede ser modificado en cualquier momento durante 
+    la ejecución del programa. */
 
     /*ejemplo*/
 
-    $edad = 17;
-    print $edad;  // Imprime: 17
+    $nombre = "Juan";  // Variable que almacena una cadena de texto
+    $edad = 17;       // Variable que almacena un número entero
+    $pi = 3.14;       // Variable que almacena un número decimal
 
 
-    print_r("printf");
+    print_r("Constantes");
 
-    /*La función printf se utiliza para imprimir una cadena de texto formateada 
-    según un formato especificado. Permite definir marcadores de posición para 
-    valores variables y controlar el formato de salida. */
-
-    /*ejemplo*/
-
-    $edadJ = 19;
-    printf("La edad de jose es: %s", $edadJ);  // Imprime: la edad de jose es: 19
-
-    /*formatos*/
-
-    echo "%s";
-    /* %s: Este formato se utiliza para imprimir una cadena de texto. */
-    $nombre = "Juan";
-    printf("Hola, %s", $nombre);  // Imprime: Hola, Juan
-
-    echo "%d o %i";
-    /* Estos formatos se utilizan para imprimir números enteros (positivos o negativos) */
-    $edad = 18;
-    printf("Tienes %d años", $edad);  // Imprime: Tienes 18 años
-
-    echo "%f";
-    /* Este formato se utiliza para imprimir números de punto flotante (decimales). 
-    Puedes especificar la precisión decimal utilizando el punto (.) seguido de un número.  */
-    $precio = 9.99;
-    printf("El precio es: %.2f", $precio);  // Imprime: El precio es: 9.99
-
-    echo "%c";
-    /* Este formato se utiliza para imprimir un carácter ASCII representado por su 
-    código numérico.  */
-    $asciiCode = 65;
-    printf("El carácter correspondiente es: %c", $asciiCode);  // Imprime: El carácter correspondiente es: A
-    
-    echo "%b";
-    /* Este formato se utiliza para imprimir un número entero en representación binaria.  */
-    $numero = 10;
-    printf("El número en binario es: %b", $numero);  // Imprime: El número en binario es: 1010
-    
-
-    /*Fin de los formatos*/
-
-    print_r("var_dump");
-    
-    /*La función var_dump muestra información detallada sobre una variable, incluyendo su tipo y valor. 
-    Es útil para fines de depuración y desarrollo. */
+    /* Una constante es un identificador (nombre) que se utiliza para representar 
+    un valor que no cambia durante la ejecución del programa.
+    Se declaran utilizando la función define() y se les asigna un valor.
+    Las constantes se definen una vez y no pueden cambiar su valor posteriormente.
+    Por convención, los nombres de las constantes se escriben en mayúsculas.
+    Las constantes son útiles para definir valores fijos, como configuraciones, 
+    valores predeterminados, nombres de API, etc. */
 
     /*ejemplo*/
 
-    $array = [1, 2, 3];
-    var_dump($array);
-    /* Imprime:
-    array(3) {
-    [0]=>
-    int(1)
-    [1]=>
-    int(2)
-    [2]=>
-    int(3)
-    }
-    */
+    define("PI", 3.1416);               // Constante que almacena el valor de PI
+    define("NOMBRE_EMPRESA", "CAMPUS");   // Constante que almacena el nombre de la empresa
+    define("API1", "POKEAPI"); //constante que almacena el nombre de la api a utilizar
 
-    print_r("print_r");
-
-    /*La función print_r se utiliza para imprimir información sobre una variable de una manera más 
-    legible para los humanos. Es útil para imprimir arreglos y objetos.  */
-
-    /*ejemplo*/
-
-    $persona = array("nombre" => "María", "edad" => 30);
-    print_r($persona);
-    /* Imprime: Array ( [nombre] => María [edad] => 30 )*/
 
 ?>
 

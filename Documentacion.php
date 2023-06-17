@@ -22,7 +22,7 @@
     mediante commits en el repositorio de GitHub.
     </p>
     <div class="boton">
-        <a class="btn-back" href="#">Mira Los Commits</a>
+        <a class="btn-back" href="https://github.com/JuanJoseDuranRinconCAMPUS2/DocumentacionPHP/commits/main" target="_blank">Mira Los Commits</a>
     </div>
     <img src="https://assets.codepen.io/1538474/astronaut.svg" class="astronaut" />
     <img src="https://assets.codepen.io/1538474/spaceship.svg" class="spaceship" />

@@ -1,5 +1,26 @@
 <?php
 
+    print_r("1. PHP BASICO");
+
+    /*PHP (acrónimo recursivo de PHP: Hypertext Preprocessor)
+    es un lenguaje de programación de código abierto utilizado 
+    principalmente para el desarrollo web. Es muy popular y
+     ampliamente utilizado, especialmente en la creación de 
+     aplicaciones web dinámicas.*/
+
+    print_r("estructura básica");
+
+    /*La etiqueta <?php ?> se utiliza en PHP para delimitar 
+    el inicio y el final de un bloque de código PHP dentro 
+    de un archivo HTML o PHP. Es la forma recomendada de 
+    incorporar código PHP en un archivo web.*/
+
+    /*ejemplo*/
+    /*
+    <?php
+     echo "hola mundo no cruel :d";
+    ?>
+    */
 ?>
 
 <!DOCTYPE html>

@@ -1,44 +1,105 @@
 <?php
 
-    print_r("1.2 Variables y constantes");
+    print_r("1.3 Tipos de datos");
 
-    /*En PHP, las variables y las constantes se utilizan para almacenar y 
-    manipular datos durante la ejecución de un programa.*/
+    /*PHP tiene varios tipos de datos incorporados que se utilizan 
+    para almacenar y manipular diferentes tipos de información.*/
 
-    print_r("Variables");
+    print_r("Entero (int)");
 
-    /*Una variable es un contenedor que almacena un valor que puede cambiar 
-    durante la ejecución del programa.
-    Se declaran utilizando el símbolo $ seguido de un nombre válido de variable
-    y se les asigna un valor con el operador de asignación =.
-    No necesitan un tipo de dato específico y pueden almacenar diferentes tipos 
-    de datos, como cadenas de texto, números, arreglos, objetos, etc.
-    El valor de una variable puede ser modificado en cualquier momento durante 
-    la ejecución del programa. */
+    /*Representa números enteros sin punto decimal. Puede ser positivo o negativo. */
 
     /*ejemplo*/
 
-    $nombre = "Juan";  // Variable que almacena una cadena de texto
-    $edad = 17;       // Variable que almacena un número entero
-    $pi = 3.14;       // Variable que almacena un número decimal
+    $edad = 17;       
+    var_dump($edad); // int(17)
 
+    print_r("Flotante (float)");
 
-    print_r("Constantes");
-
-    /* Una constante es un identificador (nombre) que se utiliza para representar 
-    un valor que no cambia durante la ejecución del programa.
-    Se declaran utilizando la función define() y se les asigna un valor.
-    Las constantes se definen una vez y no pueden cambiar su valor posteriormente.
-    Por convención, los nombres de las constantes se escriben en mayúsculas.
-    Las constantes son útiles para definir valores fijos, como configuraciones, 
-    valores predeterminados, nombres de API, etc. */
+    /*Representa números decimales o de punto flotante. */
 
     /*ejemplo*/
+    
+    $medida = 20.24;       
+    var_dump($medida); // float(20.24)
 
-    define("PI", 3.1416);               // Constante que almacena el valor de PI
-    define("NOMBRE_EMPRESA", "CAMPUS");   // Constante que almacena el nombre de la empresa
-    define("API1", "POKEAPI"); //constante que almacena el nombre de la api a utilizar
+    print_r("Cadena de texto (string)");
 
+    /*Representa una secuencia de caracteres. Puede ser texto entre comillas simples ('') o comillas dobles (""). */
+
+    /*ejemplo*/
+    
+    $mensaje = "Hola, mundo";      
+    var_dump($mensaje); // string(11) "Hola, mundo"
+
+    print_r("Booleano (bool)");
+
+    /*Representa un valor de verdadero (true) o falso (false). Se utiliza para evaluar condiciones. */
+
+    /*ejemplo*/
+    
+    $activacion = true;       
+    var_dump($activacion); // bool(true)
+
+    print_r("Arreglo (array)");
+
+    /*Representa una colección de elementos. Puede contener diferentes tipos de datos, 
+    como enteros, cadenas, objetos, etc. */
+
+    /*ejemplo*/
+    
+    $videojuegos = [
+        "Super Mario Bros",
+        "The Legend of Zelda",
+        "Final Fantasy",
+        "Minecraft",
+        "Grand Theft Auto",
+        "Assassin's Creed"
+    ];       
+    var_dump($videojuegos); // array(6) { [0]=> string(16) "Super Mario Bros" [1]=> string(19) 
+    //"The Legend of Zelda" [2]=> string(13) "Final Fantasy" [3]=> string(9) "Minecraft" [4]=> string(16) "
+    //Grand Theft Auto" [5]=> string(16) "Assassin's Creed" }
+
+    print_r("Objeto (object)");
+
+    /*Representa una instancia de una clase. Los objetos tienen propiedades y métodos 
+    que permiten acceder y manipular sus datos. */
+
+    /*ejemplo*/
+    
+    class Camper{
+        public $Nombre;
+        public $Edad;
+        protected $TI;
+
+        public function __construct($nombre, $edad, $TI) {
+            $this->Nombre = $nombre;
+            $this->Edad = $edad;
+            $this->TI = $TI;
+
+        }
+    }
+    $camper1 = new Camper("Juan", 17, "1231243");      
+    var_dump($camper1); // object(Camper)#1 (3) { ["Nombre"]=> string(4) "Juan" ["Edad"]=> int(17) ["TI":protected]=> string(7) "1231243" }
+
+    print_r("Recurso (resource)");
+
+    /* Representa una referencia externa a un recurso, como un archivo, una conexión 
+    de base de datos, entre otros. Los recursos son gestionados internamente por PHP. */
+
+    /*ejemplo*/
+    $archivo = fopen("mi_archivo.txt", "r");
+    var_dump($archivo); // resource(3) of type (stream)
+
+    print_r("Nulo (null)");
+
+    /*Representa la ausencia de valor. Se utiliza cuando una variable no tiene un 
+    valor asignado o se desea eliminar su contenido. */
+
+    /*ejemplo*/
+    
+    $posNada = null;       
+    var_dump($posNada); // NULL
 
 ?>
 

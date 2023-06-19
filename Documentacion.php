@@ -1,150 +1,48 @@
 <?php
 
-    print_r("1.7 Estructuras de control");
+    print_r("1.8 Funciones definidas por el usuario");
 
-    /*isset() y empty() son dos funciones en PHP utilizadas para verificar el estado de una variable.*/
+    /*Las funciones definidas por el usuario en PHP te permiten crear bloques de código 
+    reutilizables para llevar a cabo una tarea específica. Puedes definir tus propias 
+    funciones para encapsular la lógica de tu programa y llamarlas en diferentes partes 
+    del código según sea necesario.*/
 
-
-    print_r("Estructura condicional");
-
-    echo "if-else";
-
-    /*Permite ejecutar un bloque de código si se cumple una condición, y otro bloque 
-    de código si no se cumple la condición.*/
-
-    /*ejemplo*/
-
-    $edad = 25;
-    $es_estudiante = true;
-
-    if ($edad >= 18) {
-        echo "Eres mayor de edad.";
-
-        if ($es_estudiante) {
-            echo " Además, eres un estudiante.";
-        } else {
-            echo " No eres un estudiante.";
-        }
-    } else {
-        echo "Eres menor de edad.";
+    /* sintaxis */
+    function nombreDeLaFuncion($parametro1, $parametro2) {
+        // Código de la función
+        // Puedes realizar operaciones y retornar un valor si es necesario
     }
     
-    echo "switch-case";
+    echo("Funciones que retornan valor");
 
-    /*Permite evaluar múltiples casos y ejecutar diferentes bloques de código 
-    según el caso que se cumpla.*/
+    /*Las funciones en PHP pueden retornar valores utilizando la palabra clave "return". 
+    Al utilizar "return", puedes enviar un valor de vuelta desde la función para que 
+    pueda ser utilizado en otras partes del código. */
 
     /*ejemplo*/
-
-    $opcion = "B";
-
-    switch ($opcion) {
-        case "A":
-            echo "Seleccionaste la opción A";
-            break;
-        case "B":
-            echo "Seleccionaste la opción B";
-            break;
-        case "C":
-            echo "Seleccionaste la opción C";
-            break;
-        case "D":
-            echo "Seleccionaste la opción D";
-            break;
-        default:
-            echo "Opción inválida";
-            break;
+    
+    function sumar($num1, $num2) {
+        $suma = $num1 + $num2;
+        return " retorna el numero $suma";
     }
+    
+    $resultado = sumar(5, 3);  // Llamada a la función sumar con los valores 5 y 3
+    echo $resultado;  // Imprime el resultado, en este caso, 8
+    
+    echo("Funciones que no retornan valor");
 
-    echo "match";
-
-    /*La estructura "match" en PHP, introducida en la versión 8.0, es una alternativa 
-    a la estructura "switch-case" para realizar comparaciones más concisas y expresivas. 
-    Proporciona una sintaxis más simple y clara para realizar comparaciones de valores 
-    y ejecutar bloques de código en función del resultado.*/
-
-    /*ejemplo*/
-
-    $color = "rojo";
-
-    $match = match($color) {
-        'rojo' => "es color es $color",
-        'azul' => "es color es $color",
-        'verde' => "es color es $color",
-        'amarillo' => "es color es $color",
-        'dorado' => "es color es $color",
-        'NULL', 'null' => "no hay ninguno",
-        default => '',
-    };
-
-    var_dump($match);
-
-    print_r("Estructura repetición");
-
-    echo "while";
-
-    /*Permite ejecutar repetidamente un bloque de código mientras se 
-    cumpla una condición.*/
+    /*En PHP, hay casos en los que puedes tener funciones que realizan ciertas operaciones 
+    pero no retornan un valor específico. Estas funciones se denominan "funciones void" o 
+    "procedimientos".*/
 
     /*ejemplo*/
 
-    $numero = 1;
-    $suma = 0;
-
-    while ($numero <= 10) {
-        $suma += $numero;
-        $numero++;
+    function saludar($nombre) {
+        echo "¡Hola, $nombre!";
     }
-
-    echo "La suma de los números del 1 al 10 es: " . $suma;
-
-    echo "do-while";
-
-    /*Similar a la estructura while, pero garantiza que el bloque de 
-    código se ejecute al menos una vez antes de verificar la condición.*/
-
-    /*ejemplo*/
-
-    $intentos_maximos = 3;
-    $intentos = 0;
-    $contrasena_correcta = "secreto";
-    $contrasena_ingresada = "";
-
-    do {
-        $intentos++;
-        
-        echo "Introduce la contraseña: ";
-        $contrasena_ingresada = readline();
-        
-        if ($contrasena_ingresada == $contrasena_correcta) {
-            echo "¡Contraseña correcta! Acceso concedido.";
-            break;
-        } else {
-            echo "Contraseña incorrecta. Intento $intentos de $intentos_maximos.";
-        }
-    } while ($intentos < $intentos_maximos);
-
-    if ($intentos == $intentos_maximos) {
-        echo "Has excedido el número máximo de intentos. Acceso denegado.";
-    }
-
-    echo "for";
-
-    /*Permite ejecutar un bloque de código un número específico de veces.*/
-
-    /*ejemplo*/
-
-    $base = 2;
-    $potencia = 10;
-    $resultado = 1;
-
-    for ($i = 1; $i <= $potencia; $i++) {
-        $resultado *= $base;
-    }
-
-    echo "El resultado de elevar $base a la potencia $potencia es: $resultado";
-
-
+    
+    saludar("Juan");  // Imprime "¡Hola, Juan!"
+    
 ?>
 
 <!DOCTYPE html>

@@ -1,165 +1,118 @@
 <?php
 
-    print_r("1.4 Números y operadores");
+    print_r("1.5 Arreglos, Arreglos asociativos y funciones para arreglos");
 
-    /*En PHP, puedes trabajar con números y utilizar varios operadores 
-    para realizar operaciones matemáticas y comparaciones.*/
+    /*En PHP, los arreglos (arrays) son estructuras de datos que permiten almacenar 
+    múltiples valores en una sola variable. Hay varios tipos de arreglos en PHP, 
+    incluyendo arreglos indexados, arreglos asociativos y arreglos multidimensionales.*/
 
-    $num1 = 6;
-    $num2 = "3";
 
-    print_r("Operadores aritméticos");
+    print_r("Arreglos indexados");
 
-    /*suma "+"*/
-
-    /*ejemplo*/
-
-    $resultado = $num1 + $num2;       
-    var_dump($resultado); // int(9)
-
-    /*suma "-"*/
+    /*Un arreglo indexado se compone de elementos numerados secuencialmente, comenzando desde 0.
+    Se puede acceder a los elementos utilizando sus índices numéricos.*/
 
     /*ejemplo*/
 
-    $resultado = $num1 - $num2;       
-    var_dump($resultado); // int(3)
+    $numeros = [10, 20, 30, 40, 50];
+    echo $numeros[0];  // Imprime: 10
+    echo $numeros[3];  // Imprime: 40
+       
+    var_dump($numeros); // array(5) { [0]=> int(10) [1]=> int(20) [2]=> int(30) [3]=> int(40) [4]=> int(50) }
 
-    /*suma "*"*/
+    print_r("Arreglos asociativos");
 
-    /*ejemplo*/
-
-    $resultado = $num1 * $num2;       
-    var_dump($resultado); // int(18)
-
-    /*suma "/"*/
-
-    /*ejemplo*/
-
-    $resultado = $num1 / $num2;       
-    var_dump($resultado); // int(2)
-
-    print_r("Operadores de asignación");
-
-    /*Asignación "="*/
+    /*Un arreglo asociativo utiliza claves (keys) personalizadas en lugar de índices numéricos.
+    Cada elemento del arreglo está compuesto por una clave y su respectivo valor.
+    Se utiliza para asociar valores con nombres o identificadores.*/
 
     /*ejemplo*/
 
-    $variable = 10;      
-    var_dump($variable); // int(10)
-
-    /*"+=" (adición y asignación)*/
-
-    /*ejemplo*/
-
-    $numero = 10;
-    $numero += 5; // $numero ahora es igual a 15
-    var_dump($numero); // int(15)
-
-    /*"-=" (sustracción y asignación)*/
-
-    /*ejemplo*/
-
-    $numero = 20;
-    $numero -= 8; // $numero ahora es igual a 12
-    var_dump($numero); // int(12)
-
-    /*"*=" (multiplicación y asignación)*/
-
-    /*ejemplo*/
-
-    $numero = 5;
-    $numero *= 3; // $numero ahora es igual a 15         
-    var_dump($numero); // int(15)
-
-    /*"/=" (división y asignación)*/
-
-    /*ejemplo*/
-
-    $numero = 30;
-    $numero /= 6; // $numero ahora es igual a 5
-    var_dump($numero); // int(5)
-
-     /*"%=" (módulo y asignación)*/
-
-    /*ejemplo*/
-
-    $numero = 17;
-    $numero %= 5; // $numero ahora es igual a 2 (resto de la división de 17 entre 5)
-    var_dump($numero); // int(2)
-
-    print_r("Operadores de comparación");
-
-    /*Los operadores de comparación se utilizan para comparar valores y devolver un 
-    resultado booleano (true o false) en función de si la comparación es verdadera o falsa.*/
-
-    echo("== (igual)");
-    /* Compara si dos valores son iguales, sin tener en cuenta el tipo de dato.*/
-    /*ejemplo*/
-    var_dump($num1 == $num2); // false
-
-    echo("=== (idéntico)");
-    /* Compara si dos valores son iguales y del mismo tipo de dato.*/
-    /*ejemplo*/
-    var_dump($num1 === $num2); // false
-
-    echo("!= o <> (diferente)");
-    /* Compara si dos valores no son iguales.*/
-    /*ejemplo*/
-    var_dump($num1 <> $num2); // true
-
-    echo("!== (no idéntico)");
-    /* Compara si dos valores no son iguales o no son del mismo tipo de dato.*/
-    /*ejemplo*/
-    var_dump($num1 !== $num2); // true
-
-    echo("> (mayor que)");
-    /* Compara si el primer valor es mayor que el segundo valor.*/
-    /*ejemplo*/
-    var_dump($num1 > $num2); // true
-
-    echo("< (menor que)");
-    /* Compara si el primer valor es menor que el segundo valor.*/
-    /*ejemplo*/
-    var_dump($num1 < $num2); // false
-
-    echo(">= (mayor o igual que)");
-    /* Compara si el primer valor es mayor o igual que el segundo valor*/
-    /*ejemplo*/
-    var_dump($num1 >= $num2); // true
-
-    echo("<= (menor o igual que)");
-    /* Compara si el primer valor es menor o igual que el segundo valor.*/
-    /*ejemplo*/
-    var_dump($num1 <= $num2); // false
-
-    echo("<=> (spaceship)");
-    /* Compara dos valores y devuelve un número negativo si el primer valor es menor, 
-    un número positivo si el primer valor es mayor, o cero si ambos valores son iguales.*/
-    /*ejemplo*/
-    var_dump($num1 <=> $num2); // 1
-
-    print_r("Operadores lógicos");
+    $persona = [
+        "nombre" => "Juan",
+        "edad" => 17,
+        "pais" => "colombia"
+    ];
+    echo $persona["nombre"];  // Imprime: Juan
+    echo $persona["edad"];    // Imprime: 17
     
-    /*En PHP, los operadores lógicos se utilizan para combinar o negar condiciones lógicas.*/
-    $edad = 12;
-    $ciudad = "Santander";
+       
+    var_dump($persona); // array(3) { ["nombre"]=> string(4) "Juan" ["edad"]=> int(17) ["pais"]=> string(8) "colombia" }
 
-    echo("AND (&&)");
-    /* Devuelve true si todas las condiciones son verdaderas. */
-    /*ejemplo*/
-    var_dump($edad > 11 && $ciudad == "Santander"); // true
+    
+    print_r("Funciones para arreglos");
 
-    echo("OR (||)");
-    /* Devuelve true si al menos una de las condiciones es verdadera.*/
-    /*ejemplo*/
-    var_dump($edad >= 18 || $ciudad == "Santander"); // true
+    /*En PHP, las funciones en array son funciones específicas que te permiten realizar 
+    diversas operaciones y manipulaciones en los arreglos. Estas funciones están diseñadas 
+    para facilitar el trabajo con los arreglos y ofrecen una amplia gama de funcionalidades.*/
 
-    echo("NOT (!)");
-    /* Niega una condición. Si la condición es verdadera, ! la convierte en falsa, 
-    y si es falsa, ! la convierte en verdadera.*/
+    echo("count()");
+    /* Devuelve el número de elementos en un arreglo.*/
     /*ejemplo*/
-    $activo = false;
-    var_dump(!$activo); // true
+    $numeros = [1, 2, 3, 4, 5];
+    var_dump(count($numeros));  // int 5
+
+    echo("array_push()");
+    /* Agrega uno o más elementos al final de un arreglo.*/
+    /*ejemplo*/
+    $frutas = ["manzana", "plátano"];
+    array_push($frutas, "naranja", "uva");  // $frutas ahora es ["manzana", "plátano", "naranja", "uva"]
+    var_dump($frutas);  // array(4) { [0]=> string(7) "manzana" [1]=> string(8) "plátano" [2]=> string(7) "naranja" [3]=> string(3) "uva" }
+
+    echo("array_unshift()");
+    /* Agrega uno o más elementos al final de un arreglo.*/
+    /*ejemplo*/
+    $frutas = ["manzana", "plátano"];
+    array_unshift($frutas, "naranja", "uva");  // $frutas ahora es ["naranja", "uva", "manzana", "plátano"]
+    var_dump($frutas);  // array(4) { [0]=> string(7) "naranja" [1]=> string(3) "uva" [2]=> string(7) "manzana" [3]=> string(8) "plátano" }
+
+
+    echo("array_pop()");
+    /* Elimina y devuelve el último elemento de un arreglo.*/
+    /*ejemplo*/
+    $numeros = [1, 2, 3, 4, 5];
+    $ultimo = array_pop($numeros);  // $ultimo tendrá el valor 5, y $numeros será [1, 2, 3, 4]
+    var_dump($numeros);  // array(4) { [0]=> int(1) [1]=> int(2) [2]=> int(3) [3]=> int(4) }
+
+    echo("array_shift()");
+    /* Elimina y devuelve el primer elemento de un arreglo.*/
+    /*ejemplo*/
+    $numeros = [1, 2, 3, 4, 5];
+    $primero = array_shift($numeros);  // $primero tendrá el valor 1, y $numeros será [2, 3, 4, 5]
+    var_dump($numeros);  // array(4) { [0]=> int(2) [1]=> int(3) [2]=> int(4) [3]=> int(5) }
+
+    echo("array_merge()");
+    /* Combina dos o más arreglos en uno solo.*/
+    /*ejemplo*/
+    $array1 = [1, 2, 3];
+    $array2 = [4, 5, 6];
+    $merge = array_merge($array1, $array2);  // $combinado será [1, 2, 3, 4, 5, 6]
+    var_dump($merge);  // array(6) { [0]=> int(1) [1]=> int(2) [2]=> int(3) [3]=> int(4) [4]=> int(5) [5]=> int(6) }
+
+    echo("array_key_exists()");
+    /* Verifica si una clave existe en un arreglo asociativo.*/
+    /*ejemplo*/
+    $persona = ["nombre" => "Pedro", "edad" => 25];
+    var_dump(array_key_exists("nombre", $persona));  // bool(true) 
+
+    echo("in_array()");
+    /* Verifica si un valor existe en un arreglo.*/
+    /*ejemplo*/
+    $numeros = [1, 2, 3, 4, 5];
+    var_dump(in_array(3, $numeros));  // bool(true)
+
+    echo("sort()");
+    /* Ordena un arreglo en orden ascendente.*/
+    /*ejemplo*/
+    $numeros = [5, 2, 4, 1, 3];
+    sort($numeros);  // $numeros será [1, 2, 3, 4, 5]
+    var_dump($numeros); // array(5) { [0]=> int(1) [1]=> int(2) [2]=> int(3) [3]=> int(4) [4]=> int(5) }
+    
+    echo("rsort()");
+    /* Ordena un arreglo en orden descendente.*/
+    /*ejemplo*/
+    rsort($numeros);  // $numeros será [5, 4, 3, 2, 1]
+    var_dump($numeros);  // array(5) { [0]=> int(5) [1]=> int(4) [2]=> int(3) [3]=> int(2) [4]=> int(1) 
 
 ?>
 

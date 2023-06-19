@@ -1,105 +1,165 @@
 <?php
 
-    print_r("1.3 Tipos de datos");
+    print_r("1.4 Números y operadores");
 
-    /*PHP tiene varios tipos de datos incorporados que se utilizan 
-    para almacenar y manipular diferentes tipos de información.*/
+    /*En PHP, puedes trabajar con números y utilizar varios operadores 
+    para realizar operaciones matemáticas y comparaciones.*/
 
-    print_r("Entero (int)");
+    $num1 = 6;
+    $num2 = "3";
 
-    /*Representa números enteros sin punto decimal. Puede ser positivo o negativo. */
+    print_r("Operadores aritméticos");
+
+    /*suma "+"*/
+
+    /*ejemplo*/
+
+    $resultado = $num1 + $num2;       
+    var_dump($resultado); // int(9)
+
+    /*suma "-"*/
 
     /*ejemplo*/
 
-    $edad = 17;       
-    var_dump($edad); // int(17)
+    $resultado = $num1 - $num2;       
+    var_dump($resultado); // int(3)
 
-    print_r("Flotante (float)");
-
-    /*Representa números decimales o de punto flotante. */
+    /*suma "*"*/
 
     /*ejemplo*/
+
+    $resultado = $num1 * $num2;       
+    var_dump($resultado); // int(18)
+
+    /*suma "/"*/
+
+    /*ejemplo*/
+
+    $resultado = $num1 / $num2;       
+    var_dump($resultado); // int(2)
+
+    print_r("Operadores de asignación");
+
+    /*Asignación "="*/
+
+    /*ejemplo*/
+
+    $variable = 10;      
+    var_dump($variable); // int(10)
+
+    /*"+=" (adición y asignación)*/
+
+    /*ejemplo*/
+
+    $numero = 10;
+    $numero += 5; // $numero ahora es igual a 15
+    var_dump($numero); // int(15)
+
+    /*"-=" (sustracción y asignación)*/
+
+    /*ejemplo*/
+
+    $numero = 20;
+    $numero -= 8; // $numero ahora es igual a 12
+    var_dump($numero); // int(12)
+
+    /*"*=" (multiplicación y asignación)*/
+
+    /*ejemplo*/
+
+    $numero = 5;
+    $numero *= 3; // $numero ahora es igual a 15         
+    var_dump($numero); // int(15)
+
+    /*"/=" (división y asignación)*/
+
+    /*ejemplo*/
+
+    $numero = 30;
+    $numero /= 6; // $numero ahora es igual a 5
+    var_dump($numero); // int(5)
+
+     /*"%=" (módulo y asignación)*/
+
+    /*ejemplo*/
+
+    $numero = 17;
+    $numero %= 5; // $numero ahora es igual a 2 (resto de la división de 17 entre 5)
+    var_dump($numero); // int(2)
+
+    print_r("Operadores de comparación");
+
+    /*Los operadores de comparación se utilizan para comparar valores y devolver un 
+    resultado booleano (true o false) en función de si la comparación es verdadera o falsa.*/
+
+    echo("== (igual)");
+    /* Compara si dos valores son iguales, sin tener en cuenta el tipo de dato.*/
+    /*ejemplo*/
+    var_dump($num1 == $num2); // false
+
+    echo("=== (idéntico)");
+    /* Compara si dos valores son iguales y del mismo tipo de dato.*/
+    /*ejemplo*/
+    var_dump($num1 === $num2); // false
+
+    echo("!= o <> (diferente)");
+    /* Compara si dos valores no son iguales.*/
+    /*ejemplo*/
+    var_dump($num1 <> $num2); // true
+
+    echo("!== (no idéntico)");
+    /* Compara si dos valores no son iguales o no son del mismo tipo de dato.*/
+    /*ejemplo*/
+    var_dump($num1 !== $num2); // true
+
+    echo("> (mayor que)");
+    /* Compara si el primer valor es mayor que el segundo valor.*/
+    /*ejemplo*/
+    var_dump($num1 > $num2); // true
+
+    echo("< (menor que)");
+    /* Compara si el primer valor es menor que el segundo valor.*/
+    /*ejemplo*/
+    var_dump($num1 < $num2); // false
+
+    echo(">= (mayor o igual que)");
+    /* Compara si el primer valor es mayor o igual que el segundo valor*/
+    /*ejemplo*/
+    var_dump($num1 >= $num2); // true
+
+    echo("<= (menor o igual que)");
+    /* Compara si el primer valor es menor o igual que el segundo valor.*/
+    /*ejemplo*/
+    var_dump($num1 <= $num2); // false
+
+    echo("<=> (spaceship)");
+    /* Compara dos valores y devuelve un número negativo si el primer valor es menor, 
+    un número positivo si el primer valor es mayor, o cero si ambos valores son iguales.*/
+    /*ejemplo*/
+    var_dump($num1 <=> $num2); // 1
+
+    print_r("Operadores lógicos");
     
-    $medida = 20.24;       
-    var_dump($medida); // float(20.24)
+    /*En PHP, los operadores lógicos se utilizan para combinar o negar condiciones lógicas.*/
+    $edad = 12;
+    $ciudad = "Santander";
 
-    print_r("Cadena de texto (string)");
-
-    /*Representa una secuencia de caracteres. Puede ser texto entre comillas simples ('') o comillas dobles (""). */
-
+    echo("AND (&&)");
+    /* Devuelve true si todas las condiciones son verdaderas. */
     /*ejemplo*/
-    
-    $mensaje = "Hola, mundo";      
-    var_dump($mensaje); // string(11) "Hola, mundo"
+    var_dump($edad > 11 && $ciudad == "Santander"); // true
 
-    print_r("Booleano (bool)");
-
-    /*Representa un valor de verdadero (true) o falso (false). Se utiliza para evaluar condiciones. */
-
+    echo("OR (||)");
+    /* Devuelve true si al menos una de las condiciones es verdadera.*/
     /*ejemplo*/
-    
-    $activacion = true;       
-    var_dump($activacion); // bool(true)
+    var_dump($edad >= 18 || $ciudad == "Santander"); // true
 
-    print_r("Arreglo (array)");
-
-    /*Representa una colección de elementos. Puede contener diferentes tipos de datos, 
-    como enteros, cadenas, objetos, etc. */
-
+    echo("NOT (!)");
+    /* Niega una condición. Si la condición es verdadera, ! la convierte en falsa, 
+    y si es falsa, ! la convierte en verdadera.*/
     /*ejemplo*/
-    
-    $videojuegos = [
-        "Super Mario Bros",
-        "The Legend of Zelda",
-        "Final Fantasy",
-        "Minecraft",
-        "Grand Theft Auto",
-        "Assassin's Creed"
-    ];       
-    var_dump($videojuegos); // array(6) { [0]=> string(16) "Super Mario Bros" [1]=> string(19) 
-    //"The Legend of Zelda" [2]=> string(13) "Final Fantasy" [3]=> string(9) "Minecraft" [4]=> string(16) "
-    //Grand Theft Auto" [5]=> string(16) "Assassin's Creed" }
-
-    print_r("Objeto (object)");
-
-    /*Representa una instancia de una clase. Los objetos tienen propiedades y métodos 
-    que permiten acceder y manipular sus datos. */
-
-    /*ejemplo*/
-    
-    class Camper{
-        public $Nombre;
-        public $Edad;
-        protected $TI;
-
-        public function __construct($nombre, $edad, $TI) {
-            $this->Nombre = $nombre;
-            $this->Edad = $edad;
-            $this->TI = $TI;
-
-        }
-    }
-    $camper1 = new Camper("Juan", 17, "1231243");      
-    var_dump($camper1); // object(Camper)#1 (3) { ["Nombre"]=> string(4) "Juan" ["Edad"]=> int(17) ["TI":protected]=> string(7) "1231243" }
-
-    print_r("Recurso (resource)");
-
-    /* Representa una referencia externa a un recurso, como un archivo, una conexión 
-    de base de datos, entre otros. Los recursos son gestionados internamente por PHP. */
-
-    /*ejemplo*/
-    $archivo = fopen("mi_archivo.txt", "r");
-    var_dump($archivo); // resource(3) of type (stream)
-
-    print_r("Nulo (null)");
-
-    /*Representa la ausencia de valor. Se utiliza cuando una variable no tiene un 
-    valor asignado o se desea eliminar su contenido. */
-
-    /*ejemplo*/
-    
-    $posNada = null;       
-    var_dump($posNada); // NULL
+    $activo = false;
+    var_dump(!$activo); // true
 
 ?>
 
